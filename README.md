@@ -1,8 +1,8 @@
 # Demystified!
 
-A free, installable skill for Claude that appends a short observation after each response — naming the specific AI mechanics visible in what you just received.
+A free, installable tool for LLMs that appends a short observation after each response, naming the specific AI mechanics visible in what you just received.
 
-Not a generic explainer. A notation, specific to this response, in this conversation.
+An explainer-like notation, specific to this response, in this conversation.
 
 The notes draw on [*Your Chats, Demystified!*](https://chatsdemystified.bigwaves.ca), a plain-language explainer by Big Waves covering how large language models are built, how they work, and why they fail the way they do, which they wrote to support teams' conversations and plans about how, or if, to work with these tools.
 
@@ -10,7 +10,7 @@ The notes draw on [*Your Chats, Demystified!*](https://chatsdemystified.bigwaves
 
 ## What it does
 
-After each response, Claude adds a section called **This chat, demystified.** It identifies which of the following mechanics are visibly at work in that specific response:
+After each response, the LLM adds a section called **This chat, demystified.** It identifies which of the following mechanics are visibly at work in that specific response:
 
 - Trained patterns from pretraining
 - Post-training behaviour (tone calibration, hedging, pushback)
@@ -49,6 +49,6 @@ The section ends with: *This note is the chat tool interpreting itself: informed
 
 ## Free to use and share
 
-This skill is free. Use it, share it, tell Joanne what you think about it.
+This skill is free. Use it, share it, tell us what you think about it.
 
 Built by [Big Waves](https://bigwaves.ca).
