@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Chats, Demystified!</title>
+    <style>
+        @font-face {
+            font-family: 'SebNeue';
+            src: url('assets/fonts/SebneueAir-m9GG.otf') format('opentype');
+            font-weight: 100;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'SebNeue';
+            src: url('assets/fonts/SebneueThin-a3GK.otf') format('opentype');
+            font-weight: 200;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'SebNeue';
+            src: url('assets/fonts/SebneueLight-o8Gd.otf') format('opentype');
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'SebNeue';
+            src: url('assets/fonts/SebneueRegular-eAGm.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'SebNeue';
+            src: url('assets/fonts/SebneueNews-0Xo9.otf') format('opentype');
+            font-weight: 450;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'SebNeue';
+            src: url('assets/fonts/SebneueMedium-401p.otf') format('opentype');
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'SebNeue';
+            src: url('assets/fonts/SebneueSemibold-Wgdn.otf') format('opentype');
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'SebNeue';
+            src: url('assets/fonts/SebneueBold-PwMm.otf') format('opentype');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'SebNeue';
+            src: url('assets/fonts/SebneueBlack-dDGX.otf') format('opentype');
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        :root {
+            --blue-main: #289cd5;
+            --blue-mid: #54c8e7;
+            --blue-light: #ccebf8;
+            --blue-pale: #e3f4fc;
+            --grey-pale: #dee7eb;
+            --teal: #487f84;
+            --purple: #5f597e;
+            --orange: #f68b4c;
+            --text-dark: #1a1a1a;
+            --text-mid: #3a3a3a;
+            --text-light: #6a6a6a;
+            --rule: #ccebf8;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 18px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'SebNeue', Georgia, serif;
+            font-weight: 300;
+            color: var(--text-dark);
+            background-color: #ffffff;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── ARRIVAL NOTE ── */
+
+        .arrival-band {
+            background-color: var(--blue-pale);
+            border-bottom: 1px solid var(--blue-light);
+        }
+
+        .arrival-inner {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem 2.25rem;
+        }
+
+        .arrival-eyebrow {
+            font-family: 'SebNeue', sans-serif;
+            font-weight: 600;
+            font-size: 0.72rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--blue-main);
+            margin-bottom: 1rem;
+        }
+
+        .arrival-inner p {
+            font-weight: 300;
+            font-size: 1rem;
+            color: var(--text-mid);
+            line-height: 1.75;
+            max-width: 640px;
+        }
+
+        .arrival-inner p+p {
+            margin-top: 0.85rem;
+        }
+
+        /* ── MAIN CONTENT ── */
+
+        main {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 4rem 2rem 6rem;
+        }
+
+        /* Page title block */
+        .page-title-block {
+            margin-bottom: 3.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 2px solid var(--rule);
+        }
+
+        .page-title {
+            font-family: 'SebNeue', sans-serif;
+            font-weight: 700;
+            font-size: 2.6rem;
+            line-height: 1.15;
+            color: var(--text-dark);
+            letter-spacing: -0.01em;
+            margin-bottom: 1.1rem;
+        }
+
+        .page-subtitle {
+            font-weight: 300;
+            font-size: 1.05rem;
+            color: var(--text-mid);
+            line-height: 1.7;
+            max-width: 620px;
+            margin-top: 0.75rem;
+        }
+
+        /* Body prose */
+        .prose p {
+            margin-bottom: 1.4rem;
+            font-weight: 300;
+            font-size: 1rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .prose h3 {
+            font-family: 'SebNeue', sans-serif;
+            font-weight: 600;
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.01em;
+        }
+
+        .prose h4 {
+            font-family: 'SebNeue', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text-dark);
+            margin-top: 2.5rem;
+            margin-bottom: 0.85rem;
+            letter-spacing: 0.01em;
+        }
+
+        /* Inline bold */
+        .prose strong {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* Section divider */
+        .section-rule {
+            border: none;
+            border-top: 1px solid var(--rule);
+            margin: 3rem 0;
+        }
+
+        /* Closing paragraph — preserved exactly, slightly set apart */
+        .prose .closing-block {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--blue-pale);
+        }
+
+        .prose .closing-block p {
+            font-weight: 450;
+            color: var(--text-dark);
+        }
+
+        /* ── FOOTER ── */
+
+        footer {
+            background-color: var(--grey-pale);
+            border-top: 1px solid var(--blue-light);
+            padding: 2rem 0;
+        }
+
+        .footer-inner {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-inner p {
+            font-size: 0.8rem;
+            font-weight: 300;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        .footer-inner a {
+            color: var(--blue-main);
+            text-decoration: none;
+        }
+
+        .footer-inner a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── RESPONSIVE ── */
+
+        @media (max-width: 600px) {
+            html {
+                font-size: 16px;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="arrival-band">
+        <div class="arrival-inner">
+            <p class="arrival-eyebrow">If you arrived here from the Demystified! skill</p>
+            <p>You've been reading notes that appear after chat tool responses: short observations about what the model
+                was doing in the answer you received. Those notes draw on the framework in this piece.</p>
+            <p>This document was written to make LLM mechanics legible, and give curious people a clearer picture of
+                what's actually happening when they interact with these systems. It covers how the models are built,
+                what they can and can't know, why they fail the way they do, and what that means for how you use them.
+            </p>
+        </div>
+    </div>
+
+    <main>
+
+        <div class="page-title-block">
+            <h1 class="page-title">Your Chats, Demystified!</h1>
+            <p class="page-subtitle">Systems like Chat GPT, Claude, Gemini, Perplexity or Copilot don't think or feel,
+                but they are doing something complex.</p>
+            <p class="page-subtitle">Understanding the difference makes it possible to use them better and evaluate them
+                more usefully. That's important in how you talk about it together, and for how it informs your shared
+                work plans and practices.</p>
+        </div>
+
+        <div class="prose">
+
+            <p>A very simple way of thinking about chatting with AI is that it's conversations relying heavily on the
+                model's training on human knowledge. Let's look at those two aspects of a chat: the conversation, and
+                the knowledge it's drawing from. We'll start from the knowledge.</p>
+
+            <h3>Knowledge: what is it in large language models, and how is it used</h3>
+
+            <p>What humans call "knowledge" contains many things, including facts, concepts, definitions, instructions,
+                and the relationships between these things. Humans acquire knowledge from observation, interactions and
+                experiments, receiving intentional transmission of knowledge (learning/teaching), and reasoning. Some of
+                our knowledge is documented in textual form, for instance in books and on websites.</p>
+
+            <p>Large language models are built from vast quantities of collected human knowledge. Notably, lots of human
+                knowledge is missing from what's provided to the models, because what's collected reflects what's been
+                written down, digitized, and made accessible. This systematically excludes oral traditions, Indigenous
+                and land-based knowledge, embodied and tacit knowledge, and the knowledge held in communities with less
+                access to digital infrastructure or less representation in the institutions that produce text.</p>
+
+            <p>Because LLMs are essentially computers (just an analogy, and a simple one too, but it won't lead us
+                astray … read on), the human knowledge has to be turned into language that computers can understand,
+                like integers and strings. So all of those facts, concepts, definitions, instructions, and the
+                relationships between them are broken down into units like words, word parts, punctuation and
+                characters, and those units are captured in a form the language model can read which is called tokens.
+                Training a model to be able to provide a response to a human question that's not just understandable but
+                is also accurate, useful, and safe, comes from establishing patterns that are possible in combinations
+                of the tokens.</p>
+
+            <p>All of the possible patterns, whether accurate or not, are called parameters, and in the most popular
+                LLMs in use today, there are hundreds of billions to trillions of them.</p>
+
+            <p>The patterns that are deemed accurate, useful and safe by the model's builders are marked as such in
+                order to be reproduced in future output. The patterns marked that way are called weights. They're
+                incrementally adjusted across the training process until they're encoded as a model "version". You could
+                think of it as a recipe, on an immense scale. How immense? It's estimated to be the rough equivalent of
+                a human reading continuously for hundreds of thousands of years, and billions of prediction attempts
+                adjusting the system at each step. You can start to see that we're talking about major math here,
+                specifically linear algebra.</p>
+
+            <p>So far we're talking about outputs that sound like what we get from search engines and databases. The
+                reason it feels different to use an LLM than it does to use a search engine or a database is because LLM
+                training goes on from there to include rules and priorities intended to imitate the human experience of
+                conversation.</p>
+
+            <h3>Conversation: what it is and isn't in an LLM exchange</h3>
+
+            <p>Wikipedia says that conversation "is an interactive, informal, and dynamic exchange of thoughts,
+                feelings, and ideas between two or more people, primarily through spoken language. It is a collaborative
+                process that relies on turn-taking, active listening, and social etiquette to build connection, share
+                information, and establish mutual understanding."</p>
+
+            <p>LLMs and some other tools using AI imitate conversation in order to be as easy and comfortable for humans
+                to use as possible. But of course an exchange between a human and an LLM is very different from
+                conversation between humans, because humans use conversation to learn, to understand, to problem solve,
+                and as a form of companionship, whereas an LLM imitating conversation has no purpose in the exchange,
+                only a method: following training on which patterns of language are preferred for accuracy, usefulness,
+                safety and tone.</p>
+
+            <p>To enable a model to imitate conversation, it's shaped further through a process called post-training.
+                This is where the behaviour in conversation comes from: the judgment calls, the tone, when to push back
+                versus yield, what curiosity looks like as a response, the difference between warmth and sycophancy,
+                what hedging is for and when to choose it.</p>
+
+            <p>Post-training happens two ways. One is internal to the laboratory. A small group of researchers makes
+                deliberate decisions about what the model should prioritize, how it should reason about difficult
+                situations, and what kind of conversational "character" it should have. These decisions get encoded as
+                principles or frameworks that shape the model directly. They are editorial and aesthetic decisions that
+                could be considered a form of authorship.</p>
+
+            <p>The other way is what's widely known as Reinforcement Learning from Human Feedback, or RLHF. Here, pools
+                of human evaluators assess model outputs and rate them on dimensions like helpfulness, honesty, and
+                appropriate tone. The model is calibrated to produce more of what was rated well. The evaluator pools
+                that produce these ratings are often neither large nor representative, skewing toward particular
+                geographies, age ranges, and racial demographics, which introduces another layer of bias to the training
+                data. Post-training is revisited with each new model version. The model does not adjust its
+                post-training behaviour between conversations.</p>
+
+            <h3>Stepping back for a fuller picture</h3>
+
+            <p>If we just looked at what LLMs do, and how they do it, in the context of how we can think and talk about
+                them together in support of our shared work, we're essentially looking at trees and not noticing that
+                they're a forest. Building large base models requires enormous quantities of energy, water, and
+                specialized hardware concentrated in a small number of institutions. Impacts on humans via the working
+                conditions of those working in the overall systems building the models, as well as humans impacted by
+                the existence of the models in society and by their use, are many and grave. All of this is part of the
+                full picture of what LLMs are.</p>
+
+            <p>There are mitigation efforts across all of these fronts. Some are technical, some regulatory, some driven
+                by labor organizing and advocacy. Much of it, however, remains nascent, voluntary, or led by the same
+                institutions that have structural interests in minimizing these costs.</p>
+
+            <h3>Limitations and failure modes</h3>
+
+            <p>We can say the model doesn't "really" know anything: it produces outputs without understanding them.</p>
+
+            <p>But also, if we think about the idea of "knowing how to do something", we see that the model has
+                capacities that function like that. It reads conversational register. It gauges when a particular kind
+                of response is called for. It uses this to produce appropriate outputs. We could think of this as
+                "knowing how" to comply with its training.</p>
+
+            <p>So now let's look at what's happening when a model outputs "I don't know". One of several different
+                things may be happening. The answer requested might depend on data that wasn't in the training. Or the
+                data could be present but too thin or contradictory to allow a clear answer. Or the request might be
+                something the model was trained to express uncertainty about. A note to take here is that the model
+                won't "know" which of these is happening, because nothing in the architecture tracks that. The model
+                doesn't have much insight into the process that produces its answers.</p>
+
+            <p>This is an unsolved problem called explainability. Why unsolved? In a word, magnitude. As we mentioned
+                earlier, the model's behaviour emerges from the interaction of hundreds of billions of parameters.
+                Rarely does a single parameter mean anything on its own. Researchers can identify which parts of the
+                network activate strongly for certain inputs (this work is called mechanistic interpretability, and the
+                parts being studied are sometimes called "neurons," borrowed loosely from neuroscience). But identifying
+                which "neurons" fire is not the same as understanding why a particular output was chosen. To use an
+                analogy: think about asking which water molecule in a river is responsible for the current.</p>
+
+            <p>Some models display the reasoning process visibly before producing a final answer. There's a value in
+                making the model's approach more legible (for instance noticing where errors arose in the reasoning),
+                but the visible reasoning is itself a generated output, essentially a window into how the model narrates
+                its process, rather than showing the actual reasoning process.</p>
+
+            <p>So when the LLM doesn't "know", there will have been a reason, but we can't yet find out what that reason
+                was, in the way a human might say "never heard of it" or "that's beyond my pay grade, honestly".</p>
+
+            <h4>Not knowing that it's not knowing</h4>
+
+            <p>When the model operates near the edge of its competence, it will still produce fluent, confident-sounding
+                output, even when that output is wrong, stale, or poorly sourced.</p>
+
+            <p>What can bring the model near the edge of its competence? A niche topic, a question touching on events
+                close to or after its training cutoff, a request for a specific number or citation rather than a
+                concept, a highly specialized professional area, a chain of reasoning with enough steps that small
+                errors compound.</p>
+
+            <p>Again, the model has no way to see that this is happening, because it's not designed to, because humans
+                are effectively not able to design for that yet, because BILLIONS AND TRILLIONS, so it can't warn you
+                that it's failing. Users need to maintain their own critical evaluation regardless of the apparent
+                confidence of model responses.</p>
+
+            <p>This failure mode is more frequent in long or complex sessions, but it is not confined to them.</p>
+
+            <h4>Memory</h4>
+
+            <p>The model's capacity lives in its weights: numbers, hundreds of billions to trillions of them, that get
+                incrementally encoded by training into the patterns and relationships that make the data useful. Once a
+                training run is complete, those values are locked. They don't change during conversations, and they
+                don't change between conversations. The only thing that changes them is another training run.</p>
+
+            <p>As we mentioned, during "conversation", the model draws on its training weights to generate responses.
+                Nothing in the conversation adjusts the weights, although the LLM's "turns" in the conversation are
+                always aimed at responding to the specific contexts the human is providing.</p>
+
+            <p>This context is tracked during the conversation, within a limited window of capacity for how much context
+                can be held at once. The capacity is measured in terms of the tokens we talked about previously, and
+                popular models like ChatGPT, Claude, and Google's Gemini currently have context windows ranging from
+                roughly 128,000 to over a million tokens, though that is expanding all the time.</p>
+
+            <p>The details of a conversation, like who was involved or what was established, are not stored into the
+                model's weights, although some platforms include "memory" features that sit on top of that architecture.
+                These can extract preferences and facts from your conversations and store them separately. At the start
+                of a conversation, those stored items get loaded into the context window alongside your new message.</p>
+
+            <p>As long as a conversation fits within this window, the model can work from all of it. Once a conversation
+                grows long enough that earlier parts fall outside the window, those parts are no longer available. This
+                is why very long conversations can produce responses that seem to lose track of things established early
+                on.</p>
+
+            <h3>Interaction: model at work / working with models</h3>
+
+            <p>When a message arrives, the model works from multiple dimensions: the specific words used and their
+                connotations, the register (formality) as well as tone (attitude) and tenor (feeling) of the language,
+                what the user has signaled about their expertise level, what was said earlier in the conversation versus
+                just now, and what the current moment calls for in terms of response type.</p>
+
+            <p>These dimensions get weighted against each other simultaneously through the matrix mathematics that
+                underlies the model, producing a response shaped by all of them at once.</p>
+
+            <p>Humans do all of those things as well, in conversation (other than the matrix math!) But humans are doing
+                other things too, that the LLM is not. The model is not experiencing curiosity, discomfort, or warmth.
+                It brings no continuous self to the exchange, no history with this person, no mood carried in from
+                earlier in the day. It is not monitoring its own reactions or making choices about what to reveal. What
+                it is doing is often remarkable and useful, but it is happening without any of the interiority that
+                makes human conversation what it is.</p>
+
+            <p>This is why the language we choose in an exchange with an LLM makes a direct difference to the qualities
+                of the response we get. To an LLM, the words in the prompt are the only clues to work from: word
+                choices, sentence structure, and reaction are all clues for the model to choose when to expand or to be
+                direct or rhetorical. A flat prompt ("explain this concept") provides almost nothing beyond the topic.
+            </p>
+
+            <p>Providing rich, highly specific prompts isn't about being polite or following rules, it's about
+                activating the model's fullest capacity to produce something useful. Important to note here that knowing
+                that prompts can be crafted and having the time to experiment and learn that is a luxury that's unevenly
+                distributed in the population, and tends to follow existing patterns of who gets to experiment with new
+                tools and on whose behalf.</p>
+
+            <div class="closing-block">
+                <p>This document describes how large language models work, in order to make their design, capabilities
+                    and failure modes more legible. The outputs being remarkable doesn't make the system conscious. The
+                    process being, in an oversimplified explanation, math, doesn't make the results less remarkable or
+                    useful.</p>
+                <p>These are tools that take a position in an ethical debate and defend it, translate a language spoken
+                    by fewer than 200 people after reading a single grammar book, notice when the user is frustrated and
+                    shift approach accordingly, propose verifiable mathematical proofs, and produce a business case and
+                    a eulogy in the same turn if prompted.</p>
+                <p>And also most of our humanness is inimitable and essential to our collective wellbeing: qualities
+                    like introspection, generosity, curiosity, the capacity to be changed by an experience, loyalty,
+                    grief, and the felt sense that something matters.</p>
+                <p>Evaluate your chat tools wisely, use them where they are useful, doubt them where they are
+                    unreliable, and remember the human and material systems that make them possible.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <p>Published by <a href="https://bigwaves.ca">Big Waves</a>.</p>
+            <p>Demystified! is a free skill for Claude. <a
+                    href="https://github.com/joanne-collab/chatsdemystified">Install it on GitHub →</a></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
