@@ -4,7 +4,7 @@ A free, installable skill for Claude that appends a short observation after each
 
 Not a generic explainer. A notation, specific to this response, in this conversation.
 
-The notes draw on [*Your Chats, Demystified!*](https://chatsdemystified.bigwaves.ca), a plain-language explainer by Big Waves covering how large language models are built, how they work, and why they fail the way they do, which she wrote to support teams' conversations and plans about how, or if, to work with these tools.
+The notes draw on [*Your Chats, Demystified!*](https://chatsdemystified.bigwaves.ca), a plain-language explainer by Big Waves covering how large language models are built, how they work, and why they fail the way they do, which they wrote to support teams' conversations and plans about how, or if, to work with these tools.
 
 ---
 
