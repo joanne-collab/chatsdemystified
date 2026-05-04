@@ -196,11 +196,31 @@
 
         /* Body prose */
         .prose p {
-            margin-bottom: 1.4rem;
+            margin-bottom: 1.9rem;
             font-weight: 300;
             font-size: 1rem;
             color: var(--text-dark);
             line-height: 1.8;
+        }
+
+        .callout {
+            font-size: 1.25rem;
+            color: var(--blue-main);
+            font-weight: 500;
+            margin: 3rem 0;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--blue-main);
+            line-height: 1.6;
+        }
+
+        .callout {
+            font-size: 1.25rem;
+            color: var(--blue-main);
+            font-weight: 500;
+            margin: 3rem 0;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--blue-main);
+            line-height: 1.6;
         }
 
         .prose h3 {
@@ -342,8 +362,7 @@
 
             <h3>Knowledge: what is it in large language models, and how is it used</h3>
 
-            <p>What humans call "knowledge" contains many things, including facts, concepts, definitions, instructions,
-                and the relationships between these things. Humans acquire knowledge from observation, interactions and
+            <p><strong>What humans call "knowledge" contains many things, including facts, concepts, definitions, instructions, and the relationships between these things.</strong> Humans acquire knowledge from observation, interactions and
                 experiments, receiving intentional transmission of knowledge (learning/teaching), and reasoning. Some of
                 our knowledge is documented in textual form, for instance in books and on websites.</p>
 
@@ -368,10 +387,9 @@
             <p>The patterns that are deemed accurate, useful and safe by the model's builders are marked as such in
                 order to be reproduced in future output. The patterns marked that way are called weights. They're
                 incrementally adjusted across the training process until they're encoded as a model "version". You could
-                think of it as a recipe, on an immense scale. How immense? It's estimated to be the rough equivalent of
-                a human reading continuously for hundreds of thousands of years, and billions of prediction attempts
-                adjusting the system at each step. You can start to see that we're talking about major math here,
+                think of it as a recipe, on an immense scale. How immense? You can start to see that we're talking about major math here,
                 specifically linear algebra.</p>
+            <div class="callout">It's estimated to be the rough equivalent of a human reading continuously for hundreds of thousands of years, and billions of prediction attempts adjusting the system at each step.</div>
 
             <p>So far we're talking about outputs that sound like what we get from search engines and databases. The
                 reason it feels different to use an LLM than it does to use a search engine or a database is because LLM
@@ -380,8 +398,7 @@
 
             <h3>Conversation: what it is and isn't in an LLM exchange</h3>
 
-            <p>Wikipedia says that conversation "is an interactive, informal, and dynamic exchange of thoughts,
-                feelings, and ideas between two or more people, primarily through spoken language. It is a collaborative
+            <p><strong>Wikipedia says that conversation "is an interactive, informal, and dynamic exchange of thoughts, feelings, and ideas between two or more people, primarily through spoken language.</strong> It is a collaborative
                 process that relies on turn-taking, active listening, and social etiquette to build connection, share
                 information, and establish mutual understanding."</p>
 
@@ -413,9 +430,7 @@
 
             <h3>Stepping back for a fuller picture</h3>
 
-            <p>If we just looked at what LLMs do, and how they do it, in the context of how we can think and talk about
-                them together in support of our shared work, we're essentially looking at trees and not noticing that
-                they're a forest. Building large base models requires enormous quantities of energy, water, and
+            <p><strong>If we just looked at what LLMs do, and how they do it, in the context of how we can think and talk about them together in support of our shared work, we're essentially looking at trees and not noticing that they're a forest.</strong> Building large base models requires enormous quantities of energy, water, and
                 specialized hardware concentrated in a small number of institutions. Impacts on humans via the working
                 conditions of those working in the overall systems building the models, as well as humans impacted by
                 the existence of the models in society and by their use, are many and grave. All of this is part of the
@@ -467,10 +482,10 @@
                 concept, a highly specialized professional area, a chain of reasoning with enough steps that small
                 errors compound.</p>
 
-            <p>Again, the model has no way to see that this is happening, because it's not designed to, because humans
+            <div class="callout">Again, the model has no way to see that this is happening, because it's not designed to, because humans
                 are effectively not able to design for that yet, because BILLIONS AND TRILLIONS, so it can't warn you
                 that it's failing. Users need to maintain their own critical evaluation regardless of the apparent
-                confidence of model responses.</p>
+                confidence of model responses.</div>
 
             <p>This failure mode is more frequent in long or complex sessions, but it is not confined to them.</p>
 
@@ -541,8 +556,8 @@
                 <p>And also most of our humanness is inimitable and essential to our collective wellbeing: qualities
                     like introspection, generosity, curiosity, the capacity to be changed by an experience, loyalty,
                     grief, and the felt sense that something matters.</p>
-                <p>Evaluate your chat tools wisely, use them where they are useful, doubt them where they are
-                    unreliable, and remember the human and material systems that make them possible.</p>
+                <div class="callout">Evaluate your chat tools wisely, use them where they are useful, doubt them where they are
+                    unreliable, and remember the human and material systems that make them possible.</div>
                 <p>For discerning approaches to planning or using AI, keeping your work human when that's important,
                     call Big Waves. </p>
             </div>
