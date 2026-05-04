@@ -33,12 +33,12 @@ Demystified! works across all major AI platforms. Copy the contents of `system-p
 * **Claude Cowork:** Navigate to your workspace settings, find the system prompt/instructions field, and paste.
 * **Claude Code:** In your local directory, open or create `CLAUDE.md`, paste the prompt. It will be picked up automatically.
 
-### ChatGPT (OpenAI)
+### ChatGPT
 
 * **Custom GPTs (Plus/Pro):** Click **Explore GPTs** > **Create**. Name it "Demystified!" and paste the prompt into the **Instructions** box. Save for personal use.
 * **Custom Instructions (Free/Paid):** Go to **Settings** > **Personalization** > **Custom Instructions**. Paste the prompt into the bottom box ("How would you like ChatGPT to respond?") and enable for new chats.
 
-### Gemini (Google)
+### Gemini
 
 * **Gems (Paid Tiers):** Click **Gem manager** > **New Gem**. Name it "Demystified!" and paste the prompt into the **Instructions** box.
 * **Standard Chat (Free Tier):** Open a new chat. Paste the prompt, prefaced with *"Please adopt the following system instructions for the entirety of this conversation:"*
